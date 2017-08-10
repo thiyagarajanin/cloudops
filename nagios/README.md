@@ -1,3 +1,4 @@
+
 ### Files and scripts for Nagios and NRPE
 
 ### In Client instances
@@ -50,6 +51,7 @@ firewall-cmd --reload
 1. Download sample server specific `.cfg` config file in `/usr/local/nagios/etc/servers`
 
 `wget `
+
 2. Update the hostname and IP
 3. Add service check commands
 
@@ -57,11 +59,26 @@ firewall-cmd --reload
 ```
 define service{
 use                     generic-service,srv-pnp
-host_name               ANT-WEB
-service_description     Root Volume
+host_name               <hostname>
+service_description     Root Volume <replace with volume name>
 check_command           check_nrpe_arg!check_disk!<warning_free_space_in_%>%!<crictical_free_space_in_%>%!/dev/<device_id like xvda1>
 }
 ```
-> For Process CPU
+> For Process CPU 
+```
+define service{
+use                     generic-service,srv-pnp
+host_name               <hostname>
+service_description     Tomcat CPU <replace with service name>
+check_command           check_nrpe_arg!check_proc_cpu!<warning_CPU_usage_in_%>!<crictical_CPU_in_%>!<pid_file_location>
+}
+```
 > For Process RAM
-
+```
+define service{
+use                     generic-service,srv-pnp
+host_name               <hostname>
+service_description     Tomcat RAM <replace with service name>
+check_command           check_nrpe_arg!check_proc_cpu!<warning_Memorry_usage_in_MB>!<crictical_Memmory_in_MB>!<pid_file_location>
+}
+```
