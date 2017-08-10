@@ -26,3 +26,23 @@ mv nrpe.cfg /tmp
 4. Download NRPE Config file
 
 `wget https://raw.githubusercontent.com/thiyagarajanin/cloudops/master/nagios/nrpe.cfg`
+
+5. Restart NRPE service
+
+`service nrpe restart`
+
+6. Allow port 5666 in system and internet firewall
+
+> In Less than CentOS 7 
+```
+iptables -A INPUT -p tcp --dport 5666 -j ACCEPT
+iptables-save | sudo tee /etc/sysconfig/iptables
+service iptables restart
+```
+> In Centos 7
+```
+firewall-cmd --zone=public --add-port=5666/tcp --permanent
+firewall-cmd --reload
+```
+
+### Nagios Server
