@@ -79,6 +79,6 @@ define service{
 use                     generic-service,srv-pnp
 host_name               <hostname>
 service_description     Tomcat RAM <replace with service name>
-check_command           check_nrpe_arg!check_proc_cpu!<warning_Memorry_usage_in_MB>!<crictical_Memmory_in_MB>!<pid_file_location>
+check_command           check_nrpe_arg!check_proc_mem!<warning_Memorry_usage_in_MB>!<crictical_Memmory_in_MB>!<pid_file_location>
 }
 ```
