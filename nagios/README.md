@@ -1,5 +1,4 @@
-
-Files and scripts for Nagios and NRPE
+### Files and scripts for Nagios and NRPE
 
 ### In Client instances
 
@@ -26,4 +25,4 @@ mv nrpe.cfg /tmp
 ```
 4. Download NRPE Config file
 
-`wget `
+`wget https://raw.githubusercontent.com/thiyagarajanin/cloudops/master/nagios/nrpe.cfg`
