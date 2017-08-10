@@ -45,4 +45,23 @@ firewall-cmd --zone=public --add-port=5666/tcp --permanent
 firewall-cmd --reload
 ```
 
-### Nagios Server
+### In Nagios Server
+
+1. Download sample server specific `.cfg` config file in `/usr/local/nagios/etc/servers`
+
+`wget `
+2. Update the hostname and IP
+3. Add service check commands
+
+> For Disks
+```
+define service{
+use                     generic-service,srv-pnp
+host_name               ANT-WEB
+service_description     Root Volume
+check_command           check_nrpe_arg!check_disk!<warning_free_space_in_%>%!<crictical_free_space_in_%>%!/dev/<device_id like xvda1>
+}
+```
+> For Process CPU
+> For Process RAM
+
