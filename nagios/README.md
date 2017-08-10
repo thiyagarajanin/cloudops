@@ -1,4 +1,3 @@
-
 ### Files and scripts for Nagios and NRPE
 
 ### In Client instances
@@ -25,7 +24,7 @@ cd /etc/nagios/
 mv nrpe.cfg /tmp
 ```
 4. Download NRPE Config file
-
+d
 `wget https://raw.githubusercontent.com/thiyagarajanin/cloudops/master/nagios/nrpe.cfg`
 
 5. Restart NRPE service
@@ -50,7 +49,8 @@ firewall-cmd --reload
 
 1. Download sample server specific `.cfg` config file in `/usr/local/nagios/etc/servers`
 
-`wget `
+`cd /usr/local/nagios/etc/servers`
+`wget https://raw.githubusercontent.com/thiyagarajanin/cloudops/master/nagios/host-sample.cfg`
 
 2. Update the hostname and IP
 3. Add service check commands
