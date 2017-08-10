@@ -1,6 +1,10 @@
 ### 
 
-1. Download Naigos source package
+1. Prepare server
+
+`yum install -y httpd php gcc glibc glibc-common gd gd-devel make net-snmp`
+
+2. Download Naigos source package
 
 ```
 cd \tmp
@@ -15,4 +19,10 @@ usermod -G nagcmd nagios
 ```
 3. Compile and Install
 ```
+make all
+make install
+make install-init
+make install-commandmode
+make install-config
+make install-webconf
 ```
