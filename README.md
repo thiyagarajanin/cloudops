@@ -1,6 +1,8 @@
-## Welcome to CloudOps Hoe to Guides
+## Welcome to CloudOps How to Guides
 
+Greetings..!
 
+This page is to help the CloudOps team to create and refer steps involved in managing infrastructure. Hope this helps you out. 
 
 ### Support Contact
 
