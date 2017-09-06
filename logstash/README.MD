@@ -1,3 +1,0 @@
-ELK
-
-Logstash config files 
